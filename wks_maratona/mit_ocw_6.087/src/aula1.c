@@ -16,7 +16,7 @@
 
 int main(void) {
 	/* Array de caracteres: */
-	const char msg[] = "Hello, World!!!";
+	const char msg[] = "Hello, World!!!!";
 
 	/* Imprime no console */
 	puts(msg);
