@@ -134,6 +134,11 @@ export BIN="-O3 -g0"
 # -----------------------------
 export CODE_OPTIONS="-pedantic -pedantic-errors -fstrict-aliasing -fstrict-overflow -fipa-pure-const -fpic -fstack-check -fvisibility=default -fstack-usage -funsafe-loop-optimizations -fstack-protector -fstack-protector-all -fstack-protector-strong -fdiagnostics-color=always -fdiagnostics-show-option"
 
+
+# Include de bibliotecas extras:
+# ------------------------------
+export EXTRALIBS="-lcs50"
+
 # Executa a compilação:
 # ---------------------
 qtdArgs=($#)
@@ -160,9 +165,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Preprocessing..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Preprocessing:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i
+          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
           teste=($?)
 
           if [ $teste -eq 0 ]; then
@@ -171,9 +176,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Compilation..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Compilation:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s
+          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -183,9 +188,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Assembly..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Assembly
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o
+          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -195,9 +200,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Linking..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Linking
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq}
+          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
           teste=($?)
           fi
       ;;
@@ -207,9 +212,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Preprocessing..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Preprocessing:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i
+          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
           teste=($?)
 
           if [ $teste -eq 0 ]; then
@@ -218,9 +223,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Compilation..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Compilation:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s
+          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -230,9 +235,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Assembly..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Assembly
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o
+          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -242,9 +247,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Linking..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Linking
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq}
+          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
           teste=($?)
           fi
       ;;
@@ -254,9 +259,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Preprocessing..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Preprocessing:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i
+          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
           teste=($?)
 
           if [ $teste -eq 0 ]; then
@@ -265,9 +270,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Compilation..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Compilation:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s
+          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -277,9 +282,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Assembly..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Assembly
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o
+          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -289,9 +294,9 @@ else
           echo "-----------------------------------------------------------------------------------"
           echo "Linking..."
           echo "-----------------------------------------------------------------------------------"
-          sleep 1
+          sleep 0.1
           # Linking
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq}
+          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
           teste=($?)
           fi
       ;;
