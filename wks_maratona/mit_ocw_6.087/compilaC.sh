@@ -317,6 +317,7 @@ else
             rm -f ${arq}.s
             rm -f ${arq}.o
             rm -f ${arq}.su
+            rm -f ${arq}.c~
          ;;
          "0")
             echo ""
