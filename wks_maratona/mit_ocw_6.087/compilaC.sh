@@ -108,6 +108,7 @@ export CC="gcc"
 
 # Escolha do padrão:
 # ------------------
+#export PADRAO="-x c -std=c17"
 export PADRAO="-std=c17"
 
 
@@ -119,8 +120,8 @@ export DIAG_MES_FMT="-fmessage-length=80 -fdiagnostics-color=always -fdiagnostic
 
 # Opções para warnings/erros:
 # ---------------------------
-export BASIC_ERROR_OPTIONS="-Werror -Wfatal-errors -Wpedantic -Wall -Wextra"
-export EXTRA_ERROR_OPTIONS="-Wchar-subscripts -Wdouble-promotion -Wduplicate-decl-specifier -Wformat=2 -Wformat-overflow=2 -Wformat-nonliteral -Wformat-security -Wformat-signedness -Wformat-y2k -Wformat-truncation=2 -Wnonnull -Wnonnull-compare -Wnull-dereference -Winit-self -Wimplicit-int -Wimplicit-function-declaration -Wimplicit -Wimplicit-fallthrough=3 -Wif-not-aligned -Wignored-qualifiers -Wignored-attributes -Wmain -Wmisleading-indentation -Wmissing-attributes -Wmissing-braces -Wmissing-include-dirs -Wmultistatement-macros -Wparentheses -Wsequence-point -Wreturn-type -Wshift-count-negative -Wshift-count-overflow -Wshift-negative-value -Wshift-overflow=2 -Wswitch -Wswitch-default -Wswitch-enum -Wswitch-bool -Wswitch-unreachable -Wsync-nand -Wunused-but-set-parameter -Wunused-but-set-variable -Wunused-function -Wunused-label -Wunused-local-typedefs -Wunused-parameter -Wunused-result -Wunused-variable -Wunused-const-variable -Wunused-value -Wunused -Wuninitialized -Winvalid-memory-model -Wmaybe-uninitialized -Wunknown-pragmas -Wstrict-aliasing=3 -Wstrict-overflow=4 -Wstringop-overflow=2 -Wstringop-truncation -Wsuggest-attribute=pure -Wsuggest-attribute=const -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wmissing-format-attribute -Wsuggest-final-types -Wsuggest-final-methods -Walloc-zero -Warray-bounds -Wattribute-alias -Wbool-compare -Wbool-operation -Wduplicated-branches -Wduplicated-cond -Wframe-address -Wtautological-compare -Wtrampolines -Wfloat-equal -Wdeclaration-after-statement -Wshadow -Wunsafe-loop-optimizations -Wpointer-arith -Wpointer-compare -Wtype-limits -Wabsolute-value -Wcomment -Wtrigraphs -Wundef -Wexpansion-to-defined -Wbad-function-cast -Wcast-qual -Wcast-align -Wcast-function-type -Wwrite-strings -Wclobbered -Wconversion -Wdangling-else -Wdate-time -Wempty-body -Wenum-compare -Wjump-misses-init -Wsign-compare -Wsign-conversion -Wfloat-conversion -Wsizeof-pointer-div -Wsizeof-pointer-memaccess -Wsizeof-array-argument -Wmemset-elt-size -Wmemset-transposed-args -Waddress -Waddress-of-packed-member -Wlogical-op -Wlogical-not-parentheses -Waggregate-return -Wstrict-prototypes -Wold-style-declaration -Wold-style-definition -Wmissing-parameter-type -Wmissing-prototypes -Wmissing-declarations -Wmissing-field-initializers -Wnormalized=nfc -Woverride-init -Wpacked -Wpacked-bitfield-compat -Wpacked-not-aligned -Wpadded -Wredundant-decls -Wnested-externs -Winline -Wint-in-bool-context -Winvalid-pch -Wlong-long -Wvariadic-macros -Wvarargs -Wvector-operation-performance -Wvla -Wvolatile-register-var -Wpointer-sign -Wstack-protector -Woverlength-strings -Wunsuffixed-float-constants"
+export BASIC_ERROR_OPTIONS="-Werror -Wfatal-errors -Wall -Wextra"
+export EXTRA_ERROR_OPTIONS="-Wchar-subscripts -Wdouble-promotion -Wduplicate-decl-specifier -Wformat=2 -Wformat-overflow=2 -Wformat-nonliteral -Wformat-security -Wformat-signedness -Wformat-y2k -Wformat-truncation=2 -Wnonnull -Wnonnull-compare -Wnull-dereference -Winit-self -Wimplicit-int -Wimplicit-function-declaration -Wimplicit -Wimplicit-fallthrough=3 -Wif-not-aligned -Wignored-qualifiers -Wignored-attributes -Wmain -Wmisleading-indentation -Wmissing-attributes -Wmissing-braces -Wmissing-include-dirs -Wmultistatement-macros -Wparentheses -Wsequence-point -Wreturn-type -Wshift-count-negative -Wshift-count-overflow -Wshift-negative-value -Wshift-overflow=2 -Wswitch -Wswitch-default -Wswitch-enum -Wswitch-bool -Wswitch-unreachable -Wsync-nand -Wunused-but-set-parameter -Wunused-but-set-variable -Wunused-function -Wunused-label -Wunused-local-typedefs -Wunused-parameter -Wunused-result -Wunused-variable -Wunused-const-variable -Wunused-value -Wunused -Wuninitialized -Winvalid-memory-model -Wmaybe-uninitialized -Wunknown-pragmas -Wstrict-aliasing=3 -Wstrict-overflow=4 -Wstringop-overflow=2 -Wstringop-truncation -Wsuggest-attribute=pure -Wsuggest-attribute=const -Wsuggest-attribute=noreturn -Wsuggest-attribute=format -Wmissing-format-attribute -Wsuggest-final-types -Wsuggest-final-methods -Walloc-zero -Warray-bounds -Wattribute-alias -Wbool-compare -Wbool-operation -Wduplicated-branches -Wduplicated-cond -Wframe-address -Wtautological-compare -Wtrampolines -Wfloat-equal -Wdeclaration-after-statement -Wshadow -Wunsafe-loop-optimizations -Wpointer-arith -Wpointer-compare -Wtype-limits -Wabsolute-value -Wcomment -Wtrigraphs -Wundef -Wexpansion-to-defined -Wbad-function-cast -Wcast-qual -Wcast-align -Wcast-function-type -Wwrite-strings -Wclobbered -Wconversion -Wdangling-else -Wdate-time -Wempty-body -Wenum-compare -Wjump-misses-init -Wsign-compare -Wsign-conversion -Wfloat-conversion -Wsizeof-pointer-div -Wsizeof-pointer-memaccess -Wsizeof-array-argument -Wmemset-elt-size -Wmemset-transposed-args -Waddress -Waddress-of-packed-member -Wlogical-op -Wlogical-not-parentheses -Waggregate-return -Wstrict-prototypes -Wold-style-declaration -Wold-style-definition -Wmissing-parameter-type -Wmissing-prototypes -Wmissing-declarations -Wmissing-field-initializers -Wnormalized=nfc -Woverride-init -Wpacked -Wpacked-bitfield-compat -Wpacked-not-aligned -Wpadded -Wredundant-decls -Wnested-externs -Winline -Wint-in-bool-context -Winvalid-pch -Wlong-long -Wvariadic-macros -Wvarargs -Wvector-operation-performance -Wno-vla -Wvolatile-register-var -Wpointer-sign -Wstack-protector -Woverlength-strings -Wunsuffixed-float-constants"
 
 
 # Opções básicas para debug, teste ou bin:
@@ -132,7 +133,7 @@ export BIN="-O3 -g0"
 
 # Opções básicas para o código:
 # -----------------------------
-export CODE_OPTIONS="-pedantic -pedantic-errors -fstrict-aliasing -fstrict-overflow -fipa-pure-const -fpic -fstack-check -fvisibility=default -fstack-usage -funsafe-loop-optimizations -fstack-protector -fstack-protector-all -fstack-protector-strong -fdiagnostics-color=always -fdiagnostics-show-option"
+export CODE_OPTIONS="-fstrict-aliasing -fstrict-overflow -fipa-pure-const -fpic -fstack-check -fvisibility=default -fstack-usage -funsafe-loop-optimizations -fstack-protector-all -fstack-protector-all -fstack-protector-strong -fdiagnostics-color=always -fdiagnostics-show-option"
 
 
 # Include de bibliotecas extras:
@@ -167,7 +168,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Preprocessing:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
+          ${CC} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
           teste=($?)
 
           if [ $teste -eq 0 ]; then
@@ -178,7 +179,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Compilation:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
+          ${CC} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -190,7 +191,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Assembly
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
+          ${CC} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -202,7 +203,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Linking
-          ${CC} ${LINGUAGEM} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
+          ${CC} ${PADRAO} ${DBG} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
           teste=($?)
           fi
       ;;
@@ -214,7 +215,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Preprocessing:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
+          ${CC} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
           teste=($?)
 
           if [ $teste -eq 0 ]; then
@@ -225,7 +226,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Compilation:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
+          ${CC} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -237,7 +238,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Assembly
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
+          ${CC} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -249,7 +250,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Linking
-          ${CC} ${LINGUAGEM} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
+          ${CC} ${PADRAO} ${TST} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
           teste=($?)
           fi
       ;;
@@ -261,7 +262,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Preprocessing:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
+          ${CC} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -E ${arq}.c -o ${arq}.i ${EXTRALIBS}
           teste=($?)
 
           if [ $teste -eq 0 ]; then
@@ -272,7 +273,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Compilation:
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
+          ${CC} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -S ${arq}.i -o ${arq}.s ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -284,7 +285,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Assembly
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
+          ${CC} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} -c ${arq}.s -o ${arq}.o ${EXTRALIBS}
           teste=($?)
           fi
 
@@ -296,7 +297,7 @@ else
           echo "-----------------------------------------------------------------------------------"
           sleep 0.1
           # Linking
-          ${CC} ${LINGUAGEM} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
+          ${CC} ${PADRAO} ${BIN} ${CODE_OPTIONS} ${BASIC_ERROR_OPTIONS} ${EXTRA_ERROR_OPTIONS} ${arq}.o -o ${arq} ${EXTRALIBS}
           teste=($?)
           fi
       ;;
